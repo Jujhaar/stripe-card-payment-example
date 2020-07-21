@@ -41,6 +41,9 @@ The client secret should still be handled carefully because it can complete the 
 
 15. The ability to clone and run this github repo (https://github.com/stripe-samples/accept-a-card-payment) is _huge_. I wish I had done that instead of follow the docs.
 
+bug found: first load doesn't show the stripe payment piece.
 -16. Bug found: in [Integration builder tutorial](https://stripe.com/docs/payments/integration-builder) the code downloaded has the homepage at `localhost/checkout` when that page is blank. The homepage should just be `localhost:3000`. This is also _the best_ setup you all have. This should be highlighted better, and the exmaples here should match what is in the docs.-
 
 -17. Bug found: The default form is tiny. The width isn't set correctly and the form is unusable in the demo.-
+
+18. bug found: https://stripe.com/docs/payments/handling-payment-events#create-webhook copying on the right always copies the ruby rather than the current code we are on.

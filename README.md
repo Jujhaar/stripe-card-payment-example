@@ -1,3 +1,6 @@
+## TODO 
+update to how to test this
+
 # Accept a Card Payment
 
 Build a simple checkout form to collect card details. Included are some basic build and run scripts you can use to start up the application.
@@ -12,4 +15,4 @@ Build a simple checkout form to collect card details. Included are some basic bu
 
 ```npm start```
 
-3. Go to [localhost:3000/](localhost:3000/)
+3. Go to [localhost:3000/checkout](localhost:3000/checkout)
