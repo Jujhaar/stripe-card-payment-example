@@ -3,6 +3,7 @@ const app = express();
 const { resolve } = require("path");
 // This is your real test secret API key.
 const stripe = require("stripe")("sk_test_51H75YAC3gjtAGTUpcOqXpha10BPYpdoFfvcIL1GfjDfSdBIxpFbac8cqk0wHFBqKw5JCzBIv8WsPaAbHXZBXVytE00XTBFC5QK");
+const fs = require('fs')
 
 app.use(express.static("."));
 app.use(
@@ -72,7 +73,14 @@ app.post("/webhook", async (req, res) => {
     // Funds have been captured
     // Fulfill any orders, e-mail receipts, etc
     // To cancel the payment after capture you will need to issue a Refund (https://stripe.com/docs/api/refunds)
-    console.log("💰 Payment captured!");
+    const celebrationContent = `[${new Date()}]💰 Successful Payment!\n`;
+    console.log(celebrationContent);
+    fs.appendFile('./successful_orders.log', celebrationContent, (err) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+    })
   } else if (eventType === "payment_intent.payment_failed") {
     console.log("❌ Payment failed.");
   }
