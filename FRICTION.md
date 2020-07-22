@@ -79,7 +79,7 @@ It's important that it's clear.
 
 
 ## Preliminary Plan of Attack
-1. The `webhooks` clash with `create-payment-intents` is the biggest issue from a straight developer docs perspective and caused me the most pain. That said, it's lower down the funnel and optional for some users.
+1. The `webhooks` clash with `create-payment-intents` is the biggest issue from a straight developer docs perspective and caused me the most pain. That said, it's lower down the funnel and optional for some users. This should be fixed first because it actively adds to confusion for developers.
 2. Having a dev "choose their own adventure" with all the great resources we have in a structured way would've saved me tons of time and frustration. Reworking the flow of the docs to be clear about learning options and follow the easiest to hardest ordering will probably increase conversion.
 3. Some small bugs can be fixed right off the bat - copying the right code based on language and no longer asking a user who is signed in to sign in.
 
