@@ -1,51 +1,72 @@
-## Friction Log
+# Friction Log
 "A friction log is a document that details your experience using the product. It should cover what was good about the experience, while
 focusing on all the places where the product experience could've been improved, both from a user and your perspective."
 
-## General notes
-These notes will be coalesced into more meaningful stories at the end of the process
-1. <b>Summary</b>: The docs window cuts off much of the content if it is not most of the screen. 
-<b>Impact</b>: This is an issue as developers want their code on one side and the docs on the other to go back and forth between them. This issue is even more important today - most of us don't have the luxury of mulitple screens at home during Covid. It's even worse in the mobile view, but my guess is most developers looking at the docs are going through this on their computers. On the mac, scrolling left and right when the page doesn't respond takes you "back" or "forward", adding to the frustration of the user when trying to navigate.
-<b>Potential fixes</b>: Two immediate fixes come to mind - ability to scroll left to right on the docs pages and hiding the side bar at a certain screen size.
+## Overview
+I used three main resources to get this project done:
+1. The docs provided and linked at https://stripe.com/docs/payments/accept-a-payment
+2. The stripe-samples github repo at https://github.com/stripe-samples/accept-a-card-payment
+3. The integration builder (this was by far the most useful): https://stripe.com/docs/payments/integration-builder
 
-2. I love the diagram explaining the customer journey right up front. This sets the stage well - a picture is worth 1,000 words.
+I'll be writing about my experience from the perspectives of an impatient developer and adding potential solutions that crossed my mind.
+✅ denotes a good experience
+⚠️ denotes an area I was frustrated by, generally followed by a few quick ideas.
+⚖️ denotes an experience that might be improved but also might be outweighed by other concerns.
+🤔 denotes an idea that might address the issue.
 
-3. <b>Problem</b>: I need to set up a whole new account for Stripe.
-<b>Impact</b>: This is friction - I need to create a new, strong password that is unique and store it. The requirements are different from most accounts (10 chars instead of numbers, letters, special characters) which means now I need a completely unique password.
-<b>Potential fixes</b>: This might be unavoidable due to the secure nature of Stripe. But I'd love to know 1) why the requirements are the way they are, 2) why we can't use another authentification method (e.g. Sign in with Google, Facebook, etc.), and 3) if we can add a "keep me signed in" checkbox to make sure the lazier ones of us don't need to remember the password forever.
+🐛 indicates a bug I found.
 
-4. The Stripe dashboard somehow has values on the graph when I haven't set anything up. Why?
+I'll note that this took me a lot longer than I thought it would. Either that's me... or it's the documentation 😉
 
-5. I love the ability to choose the language throughout the code and the animation that switches it. Unfortunately, this is not saved as part of my account, so it continually switches back to the first option (Ruby).
 
-6. Prefilled test keys. I love that idea because it doesn't take me out of the context of my work. Unfortunately, the tooltip that was so useful before I signed in continues to say "Sign in to see examples pre-filled with your test keys." even after I've signed in.
+## Log
+1. I first set up a React app using create-react-app.
 
-7. Meta point - why not provide an example repo based on the language of choice? Put the code snippets together, make it even more copy-and-paste able. What this solves is the view of the full picture, the ability to see how structures mold together, and an overall directory file structure which makes it easier to follow than text. One "crazy idea": just have an example repo for every language. NOTE: I found this later - it wasn't obvious to me at first but is very useful.
+2. I opened the docs on the left side of my screen and terminal on the right side. I use a 15" Macbook Pro.
+⚠️ The docs window cuts off much of the content if it is not most of the screen. This is an issue as developers want their code on one side and the docs on the other to go back and forth between them. This issue is even more important today - most of us don't have the luxury of mulitple screens at home during Covid.
+Throughout my journey, I frequently tried to move the docs left and right. On the mac, tracking left and right when the page doesn't respond takes you "back" or "forward", adding to the frustration when trying to navigate. I looked at the mobile view hoping there would be a better experience - it's the same, but my guess is most developers looking at the docs are going through this on their computers.
+🤔 Two immediate fixes come to mind - ability to scroll left to right on the docs pages and collapsing the left side bar at a certain screen size.
 
-8. Over the copy icon, would love a tooltip that says "Copy" since it's a bit different than what the normal copy icon looks like to me.
+3. ⚖️ I loved the "What you're building" section right up top, along with a diagram of the overall flow. The "Clone from GitHub" callout is nice, but I think the first thing we should tell devs is their options on this adventure. The integration builder, which I found the most helpful, is not even mentioned. Cloning an existing repo (or at the least reading through it) is the impatient developer's bread and butter.
+🤔 I would tell devs there are several paths right at the beginning. That way with a click they can explore all three and choose the right one for them.
 
-9. I did a search for `Stripe PaymentIntent tutorial` and the first hit was not Stripe, it was https://fireship.io/lessons/stripe-payment-intents-tutorial/. We can learn a lot from what cusomters are doing instead of using our docs. 
+4. ✅ I love that I can choose my platform at the top and my language in the sections and it changes and persists all examples with a beautiful animation.
 
-10. The code sandbox is _amazing_. Seeing the code and being able to play with it in this environment is so important for iterative development and those who learn by tinkering (most impatient devs). Let's put this resource front and center.
+5. I need to set up a whole new account for Stripe.
+⚠️ This is friction - I need to create a new, strong password that is unique and store it. The requirements are different from most accounts (10 chars instead of numbers, letters, special characters) which means now I need a completely unique password.
+This might be unavoidable due to the secure nature of Stripe.
+🤔 I'd love to know 1) why the requirements are the way they are, 2) why we can't use another authentification method (e.g. Sign in with Google, Facebook, etc.), and 3) if we can add a "keep me signed in" checkbox to make sure the lazier ones of us don't need to remember the password forever.
 
-11. The way this is created is not iterative. For example, I put a "CheckoutForm" element in the `collect card details` step even though it's not defined until the next portion, `submit the payment to stripe`.
+6. ⚠️ The Stripe dashboard I get to after signing up somehow has values on the graph when I haven't set anything up. Why?
+🤔 We probably shouldn't show dashboards until they are relevant - there is tons of material we can show to a new user before dashbaords are relevant.
 
-12. Bold this text:
+7. ⚖️ 🐛 Prefilled test keys. I love that idea because it doesn't take me out of the context of my work. Unfortunately, the tooltip that was so useful before I signed in continues to say "Sign in to see examples pre-filled with your test keys." even after I've signed in.
+
+8. Side-bar: I did a search for `Stripe PaymentIntent tutorial` and the first hit was not Stripe, it was https://fireship.io/lessons/stripe-payment-intents-tutorial/. We can learn a lot from what cusomters are doing instead of using our docs.
+
+9. ⚖️ The way the docs are structured is not iterative. For example, I put a "CheckoutForm" element in the `collect card details` step even though it's not defined until the next portion, `submit the payment to stripe`.
+🤔 I would order the docs in a way that starts with the easiest pieces first - the frontend React app. After that, we can talk about how to test the server. That said, this may be how most users think and I'm just different.
+
+10. Nit: Bold this text:
 ```
 The client secret should still be handled carefully because it can complete the charge. Do not log it, embed it in URLs, or expose it to anyone but the customer.
 ```
+It's important that it's clear.
 
-13. The client secret fetching example has no file name and therefore takes more effort to figure out where to put and when.
+11. ✅ This whole process was a struggle, because I didn't understand how the different snippets interacted with one another. <strong>Finding the [integration builder](https://stripe.com/docs/payments/integration-builder) was a gamechanger.</strong> This was easy to copy and setup, took me through the process holistically, and had a small number of files that worked together to get the job done.
 
-14. I feel like the "What you're building" component is new and wasn't there when I checked a few days ago. But it's a great addition.
+12. ✅ I was able to use the integration builder and tweak files to locally set up the payments and try the test cases. The [integration examples](https://stripe.com/docs/payments/accept-a-payment#web-test-integration) on the site and example credit cards are _amazing_ and help so much with development and confidence that I'm building for all sorts of use cases. Testing in the payments world is always so dangerous and nerve-wracking, so test cards are essential. And the `42` touch is a nice one for developers - it shows you "get it".
 
-15. The ability to clone and run this github repo (https://github.com/stripe-samples/accept-a-card-payment) is _huge_. I wish I had done that instead of follow the docs.
+13. ⚠️ 🐛 Webhooks were a bear to set up and there are two major reasons for this: 1) We need the raw body for verifying webhooks, but all examples of the `create-payment-intent` endpoint convert to JSON. 2) The examples _aren't consistent with how they reflect this_. In the docs, the example for the [payment intent endpoint](https://stripe.com/docs/payments/accept-a-payment#web-create-payment-intent) has a different setup than the [webhook endpoint](https://stripe.com/docs/payments/handling-payment-events#create-webhook). I wasn't sure if these should be 2 files or 1, and when I fixed one I broke the other. <strong>This was the most frustrating part of my experience.</strong> I only figured it out by looking at [this comment in the stripe-samples repo](https://github.com/stripe-samples/accept-a-card-payment/blob/ced1374a33c963d482ea88f29a1ff89a390831f7/using-webhooks/server/node/server.js#L11). I count this as a bug in the docs.
 
-bug found: first load doesn't show the stripe payment piece.
--16. Bug found: in [Integration builder tutorial](https://stripe.com/docs/payments/integration-builder) the code downloaded has the homepage at `localhost/checkout` when that page is blank. The homepage should just be `localhost:3000`. This is also _the best_ setup you all have. This should be highlighted better, and the exmaples here should match what is in the docs.-
+14. 🐛 When looking at https://stripe.com/docs/payments/handling-payment-events#create-webhook copying the text always copies the ruby version of the code rather than the current code we are on.
 
--17. Bug found: The default form is tiny. The width isn't set correctly and the form is unusable in the demo.-
+15. ✅ The Stripe CLI was super easy to setup, authenticate, and use to test webhooks. It's a great tool and I'm sure I just scratched the surface of what it's capable of.
 
-18. bug found: https://stripe.com/docs/payments/handling-payment-events#create-webhook copying on the right always copies the ruby rather than the current code we are on.
 
-19. webhooks were nasty to implement because they are treated differently
+## Preliminary Plan of Attack
+1. The `webhooks` clash with `create-payment-intents` is the biggest issue from a straight developer docs perspective and caused me the most pain. That said, it's lower down the funnel and optional.
+2. Having a dev "choose their own adventure" with all the great resources we have in a structured way would've saved me tons of time and frustration.
+3. Some small bugs can be fixed right off the bat.
+
+I only touched a small portion of all the development types out there, so my bias is probably clear. I'd love to know where users drop off, what language/platform they use most, which tools they find most valuable, etc.

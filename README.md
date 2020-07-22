@@ -20,7 +20,7 @@ This is a React app with a Node backend. It was heavily influenced and mostly co
 
 ```npm start```
 
-3. Go to [localhost:3000/checkout](localhost:3000/checkout) (this should open automatically)
+3. Go to `localhost:3000/checkout` (this should open automatically)
 
 ## Notes & Tips
 * You have to refresh the page everytime you start the application to get it to load. This was an issue with a fresh download of the tutorial so honestly it's a bug on Stripe's end from what I can tell.
