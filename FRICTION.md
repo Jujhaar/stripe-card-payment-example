@@ -47,3 +47,5 @@ bug found: first load doesn't show the stripe payment piece.
 -17. Bug found: The default form is tiny. The width isn't set correctly and the form is unusable in the demo.-
 
 18. bug found: https://stripe.com/docs/payments/handling-payment-events#create-webhook copying on the right always copies the ruby rather than the current code we are on.
+
+19. webhooks were nasty to implement because they are treated differently
