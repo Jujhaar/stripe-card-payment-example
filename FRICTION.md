@@ -9,9 +9,13 @@ I used three main resources to get this project done:
 3. The integration builder (this was by far the most useful): https://stripe.com/docs/payments/integration-builder
 
 I'll be writing about my experience from the perspectives of an impatient developer and adding potential solutions that crossed my mind.
+
 ✅ denotes a good experience
+
 ⚠️ denotes an area I was frustrated by, generally followed by a few quick ideas.
+
 ⚖️ denotes an experience that might be improved but also might be outweighed by other concerns.
+
 🤔 denotes an idea that might address the issue.
 
 🐛 indicates a bug I found.
@@ -23,21 +27,27 @@ I'll note that this took me a lot longer than I thought it would. Either that's 
 1. I first set up a React app using create-react-app.
 
 2. I opened the docs on the left side of my screen and terminal on the right side. I use a 15" Macbook Pro.
+
 ⚠️ The docs window cuts off much of the content if it is not most of the screen. This is an issue as developers want their code on one side and the docs on the other to go back and forth between them. This issue is even more important today - most of us don't have the luxury of mulitple screens at home during Covid.
 Throughout my journey, I frequently tried to move the docs left and right. On the mac, tracking left and right when the page doesn't respond takes you "back" or "forward", adding to the frustration when trying to navigate. I looked at the mobile view hoping there would be a better experience - it's the same, but my guess is most developers looking at the docs are going through this on their computers.
+
 🤔 Two immediate fixes come to mind - ability to scroll left to right on the docs pages and collapsing the left side bar at a certain screen size.
 
 3. ⚖️ I loved the "What you're building" section right up top, along with a diagram of the overall flow. The "Clone from GitHub" callout is nice, but I think the first thing we should tell devs is their options on this adventure. The integration builder, which I found the most helpful, is not even mentioned. Cloning an existing repo (or at the least reading through it) is the impatient developer's bread and butter.
+
 🤔 I would tell devs there are several paths right at the beginning. That way with a click they can explore all three and choose the right one for them.
 
 4. ✅ I love that I can choose my platform at the top and my language in the sections and it changes and persists all examples with a beautiful animation.
 
 5. I need to set up a whole new account for Stripe.
+
 ⚠️ This is friction - I need to create a new, strong password that is unique and store it. The requirements are different from most accounts (10 chars instead of numbers, letters, special characters) which means now I need a completely unique password.
 This might be unavoidable due to the secure nature of Stripe.
+
 🤔 I'd love to know 1) why the requirements are the way they are, 2) why we can't use another authentification method (e.g. Sign in with Google, Facebook, etc.), and 3) if we can add a "keep me signed in" checkbox to make sure the lazier ones of us don't need to remember the password forever.
 
 6. ⚠️ The Stripe dashboard I get to after signing up somehow has values on the graph when I haven't set anything up. Why?
+
 🤔 We probably shouldn't show dashboards until they are relevant - there is tons of material we can show to a new user before dashbaords are relevant.
 
 7. ⚖️ 🐛 Prefilled test keys. I love that idea because it doesn't take me out of the context of my work. Unfortunately, the tooltip that was so useful before I signed in continues to say "Sign in to see examples pre-filled with your test keys." even after I've signed in.
@@ -45,6 +55,7 @@ This might be unavoidable due to the secure nature of Stripe.
 8. Side-bar: I did a search for `Stripe PaymentIntent tutorial` and the first hit was not Stripe, it was https://fireship.io/lessons/stripe-payment-intents-tutorial/. We can learn a lot from what cusomters are doing instead of using our docs.
 
 9. ⚖️ The way the docs are structured is not iterative. For example, I put a "CheckoutForm" element in the `collect card details` step even though it's not defined until the next portion, `submit the payment to stripe`.
+
 🤔 I would order the docs in a way that starts with the easiest pieces first - the frontend React app. After that, we can talk about how to test the server. That said, this may be how most users think and I'm just different.
 
 10. Nit: Bold this text:
