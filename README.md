@@ -34,3 +34,6 @@ To check Webhooks: `stripe listen --forward-to http://localhost:4242/webhook`
 To simulate successful PaymentIntents (and see the `successful_orders.log` file grow): stripe trigger payment_intent.succeeded
 
 * The standard test cases for payment intents can be found [here](https://stripe.com/docs/payments/accept-a-payment#web-test-integration).
+
+## Caveats
+The site is not pretty, it's definitely overpriced, and there's no way you're getting the product, but it is refreshingly simple.
