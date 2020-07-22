@@ -8,7 +8,7 @@ I used three main resources to get this project done:
 2. The stripe-samples github repo at https://github.com/stripe-samples/accept-a-card-payment
 3. The integration builder (this was by far the most useful): https://stripe.com/docs/payments/integration-builder
 
-I'll be writing chronologically about my experience from the perspectives of an impatient developer and adding potential solutions that crossed my mind.
+I'll summarize my key takeaways and then write chronologically about my experience from the perspective of an impatient developer.
 
 ✅ denotes a good experience
 
